@@ -1,0 +1,19 @@
+.stone-rotate-user {
+  transform: rotate(90deg);
+}
+
+.stone-rotate-pc {
+  transform: rotate(-90deg);
+}
+
+.paper-rotate-user {
+  transform: rotate(90deg);
+}
+
+.paper-rotate-pc {
+  transform: rotate(-90deg);
+}
+
+.scissors-rotate-user {
+  transform: rotateY(180deg);
+}

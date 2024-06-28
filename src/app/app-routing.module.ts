@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: './pages/main/main.module'
+    redirectTo: 'main'
   }
 ];
 
