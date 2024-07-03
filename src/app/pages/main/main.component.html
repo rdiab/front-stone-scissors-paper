@@ -1,2 +1,20 @@
-<!-- TODO: Delete this. Is here just for testing -->
-<app-hand [move]="moveUser" [isUser]="true"></app-hand>
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card w-25">
+    <div class="card-header text-center">
+      <h1>Game Menu</h1>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="lives" class="h5">Select Number of Lives</label>
+          <select id="lives" class="form-control form-select-lg" [formControl]="livesForm">
+            <option *ngFor="let life of lives" [value]="life">{{ life }}</option>
+          </select>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <button type="button" class="btn btn-primary btn-lg" routerLink="/game">Start Game</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
