@@ -1,3 +1,49 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
-  <div class="text-white">rock-paper-scissors-game works!</div>
+<div class="vh-100 d-flex flex-column justify-content-between">
+  <!-- PLAYERS RESULT -->
+  <div class="d-flex justify-content-center align-items-center text-white flex-grow-1">
+    <div class="row vw-100 text-center">
+      <!-- PLAYER RESULT -->
+      <div class="col-6">
+        <h1 class="mb-4 mat-display-1">Player</h1>
+        <div class="mb-5">
+          <app-hearts #playerHearts [lives]="gameService.livesPlayer"></app-hearts>
+        </div>
+        <app-hand #playerHand [isUser]="true" [move]="playerMove"></app-hand>
+      </div>
+
+      <!-- COMPUTER RESULT -->
+      <div class="col-6">
+        <h1 class="mb-4 mat-display-1">Computer</h1>
+        <div class="mb-5">
+          <app-hearts #computerHearts [lives]="gameService.livesComputer"></app-hearts>
+        </div>
+        <app-hand #computerHand [isUser]="false" [move]="computerMove"></app-hand>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVES -->
+  <div class="d-flex justify-content-center mb-buttons">
+    <mat-button-toggle-group name="gameMoves" aria-label="Game moves">
+      <ng-container *ngFor="let move of gameService.moves">
+        <mat-button-toggle value="bold" (change)="onMoveSelect(move)">{{ move }}</mat-button-toggle>
+      </ng-container>
+    </mat-button-toggle-group>
+  </div>
+
+  <!-- PLAY BUTTON -->
+  <div class="d-flex justify-content-center play-button-wrapper">
+    <button
+      mat-fab
+      type="button"
+      color="primary"
+      #tooltip="matTooltip"
+      matTooltip="Need to select a move before playing"
+      matTooltipPosition="above"
+      [matTooltipDisabled]="disableTooltip"
+      [disabled]="disablePlayButton"
+      (click)="play()">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+  </div>
 </div>

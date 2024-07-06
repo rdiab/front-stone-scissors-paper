@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
         map((value) => Number(value))
       )
       .subscribe((lives) => {
-        this.gameService.lives = lives;
+        this.gameService.setLivesToAllPlayers(lives);
       });
   }
 }

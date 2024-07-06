@@ -3,7 +3,7 @@
 }
 
 .stone-rotate-pc {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) rotateY(180deg);
 }
 
 .paper-rotate-user {
@@ -11,7 +11,7 @@
 }
 
 .paper-rotate-pc {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) rotateY(180deg);
 }
 
 .scissors-rotate-user {
