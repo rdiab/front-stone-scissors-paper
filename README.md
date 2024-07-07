@@ -1,14 +1,12 @@
-# FrontStoneScissorsPaper
+# Front Stone Scissors Paper Game
+
+This is the classic game of Stone Scissor Paper where you play against the machine, and you can configure how many lives you want to play the game with.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
 
 ## Installation
 
 `npm i`
-
-## Stone Scissors Paper Game
-
-This is the classic game of Stone Scissor Paper where you play against the machine, and you can configure how many lives you want to play the game with.
 
 ## Usage
 
