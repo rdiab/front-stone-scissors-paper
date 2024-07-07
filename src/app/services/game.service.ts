@@ -8,7 +8,7 @@ export class GameService {
   livesPlayer: number = 3;
   livesComputer: number = 3;
 
-  moves: MoveEnum[] = [MoveEnum.PAPER, MoveEnum.SCISSORS, MoveEnum.STONE];
+  moves: MoveEnum[] = [MoveEnum.STONE, MoveEnum.SCISSORS, MoveEnum.PAPER];
 
   constructor() {}
 
