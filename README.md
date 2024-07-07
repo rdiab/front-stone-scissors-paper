@@ -1,10 +1,22 @@
-# FrontStoneScissorsPaper
+# Front Stone Scissors Paper Game
+
+This is the classic game of Stone Scissor Paper where you play against the machine, and you can configure how many lives you want to play the game with.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.12.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`npm i`
+
+## Usage
+
+Before running the app is needed to run the following Spring Boot Java back app: `https://github.com/rdiab/back-stone-scissors-paper`.
+Simply follow the steps explained in README.md to install and run it.
+
+After this, run `ng serve` to run it and navigate to `http://localhost:4200/`.
+Now you are able to play the game!
+
+The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

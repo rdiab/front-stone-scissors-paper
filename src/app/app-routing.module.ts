@@ -7,8 +7,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/main/main.module').then((m) => m.MainModule)
   },
   {
+    path: 'game',
+    loadChildren: () =>
+      import('./pages/rock-paper-scissors-game/rock-paper-scissors-game.module').then(
+        (m) => m.RockPaperScissorsGameModule
+      )
+  },
+  {
     path: '**',
-    redirectTo: './pages/main/main.module'
+    redirectTo: 'main'
   }
 ];
 

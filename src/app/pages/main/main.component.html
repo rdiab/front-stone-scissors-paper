@@ -1,1 +1,27 @@
-<p>main works!</p>
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <mat-card class="custom-card">
+    <mat-card-header class="text-center">
+      <mat-card-title>Stone Scissors Paper</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center mt-5">
+        <div class="">Select number of lives</div>
+      </div>
+      <div class="d-flex justify-content-center mt-1">
+        <mat-form-field>
+          <mat-label class="custom-label">Lives</mat-label>
+          <mat-select [formControl]="livesForm">
+            <mat-option *ngFor="let life of lives" [value]="life">{{ life }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="d-flex justify-content-center mb-3">
+        <button mat-fab type="button" color="primary" routerLink="/game">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
