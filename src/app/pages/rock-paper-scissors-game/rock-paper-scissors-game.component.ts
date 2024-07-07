@@ -6,6 +6,9 @@ import { GameRequestModel } from '../../models/game-request.model';
 import { GameResult } from '../../models/game-result.model';
 import { ResultEnum } from '../../enum/result.enum';
 import { HandComponent } from '../../components/hand/hand.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CloseGameDialogComponent } from '../../components/close-game-dialog/close-game-dialog.component';
+import { GameEndResultDialogComponent } from '../../components/game-end-result-dialog/game-end-result-dialog.component';
 
 @Component({
   selector: 'app-rock-paper-scissors-game',
@@ -29,7 +32,8 @@ export class RockPaperScissorsGameComponent {
 
   constructor(
     public gameService: GameService,
-    private gameRepositoryService: GameRepositoryService
+    private gameRepositoryService: GameRepositoryService,
+    private dialog: MatDialog
   ) {}
 
   onMoveSelect(move: MoveEnum) {
@@ -50,17 +54,12 @@ export class RockPaperScissorsGameComponent {
   #playApi(move: MoveEnum) {
     let gameRequest = new GameRequestModel(move);
     this.gameRepositoryService.play(gameRequest).subscribe((gameResult: GameResult) => {
-      console.log(gameResult);
       this.#handleGameResult(gameResult);
     });
   }
 
   #handleGameResult(gameResult: GameResult) {
-    setTimeout(() => {
-      this.playerMove = gameResult.userMove;
-      this.computerMove = gameResult.computerMove;
-    }, 1000);
-    setTimeout(() => (this.disablePlayButton = false), 2000);
+    this.#triggerAnimations(gameResult);
 
     switch (gameResult.result) {
       case ResultEnum.WIN:
@@ -80,5 +79,30 @@ export class RockPaperScissorsGameComponent {
       default:
         return;
     }
+  }
+
+  #triggerAnimations(gameResult: GameResult) {
+    setTimeout(() => {
+      this.playerMove = gameResult.userMove;
+      this.computerMove = gameResult.computerMove;
+    }, 1000);
+    setTimeout(() => {
+      this.disablePlayButton = false;
+      if (this.#doGameHasEnded()) {
+        this.#openGameEndResultDialog();
+      }
+    }, 2000);
+  }
+
+  openFinishGameDialog() {
+    this.dialog.open(CloseGameDialogComponent, { disableClose: true });
+  }
+
+  #doGameHasEnded(): boolean {
+    return this.gameService.livesComputer === 0 || this.gameService.livesPlayer === 0;
+  }
+
+  #openGameEndResultDialog() {
+    this.dialog.open(GameEndResultDialogComponent, { disableClose: true });
   }
 }

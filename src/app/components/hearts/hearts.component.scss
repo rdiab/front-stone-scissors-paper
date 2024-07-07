@@ -1,0 +1,8 @@
+.hearts-wrapper {
+  height: clamp(40px, 1.5vw, 72px);
+  margin-bottom: 6vw;
+}
+
+.lives-text {
+  font-size: clamp(16px, 1.5vw, 40px);
+}

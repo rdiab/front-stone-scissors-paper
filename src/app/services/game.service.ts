@@ -24,4 +24,9 @@ export class GameService {
   subtractComputerLife() {
     this.livesComputer--;
   }
+
+  resetGame() {
+    this.livesPlayer = 3;
+    this.livesComputer = 3;
+  }
 }

@@ -8,6 +8,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CloseGameDialogModule } from '../../components/close-game-dialog/close-game-dialog.module';
+import { GameEndResultDialogModule } from '../../components/game-end-result-dialog/game-end-result-dialog.module';
 
 @NgModule({
   declarations: [RockPaperScissorsGameComponent],
@@ -19,7 +21,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatButtonModule,
     MatButtonToggleModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CloseGameDialogModule,
+    GameEndResultDialogModule
   ],
   exports: [RockPaperScissorsGameComponent]
 })
