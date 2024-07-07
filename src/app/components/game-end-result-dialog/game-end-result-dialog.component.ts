@@ -7,8 +7,8 @@ import { GameService } from '../../services/game.service';
   styleUrls: ['./game-end-result-dialog.component.scss']
 })
 export class GameEndResultDialogComponent implements OnInit {
-  victory: string = 'VICTORY';
-  defeat: string = 'DEFEAT';
+  victory: string = '🏆 VICTORY 🏆';
+  lose: string = '☠️ YOU LOSE ☠️';
   title: string = this.victory;
 
   constructor(public gameService: GameService) {}
@@ -23,7 +23,7 @@ export class GameEndResultDialogComponent implements OnInit {
       return;
     }
     if (this.gameService.livesPlayer === 0) {
-      this.title = this.defeat;
+      this.title = this.lose;
     }
   }
 }

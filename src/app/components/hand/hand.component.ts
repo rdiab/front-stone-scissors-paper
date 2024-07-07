@@ -54,7 +54,7 @@ export class HandComponent implements OnInit, OnChanges {
     this.innerWidth = window.innerWidth;
 
     const minSize = 100;
-    const maxSize = 320;
+    const maxSize = 280;
     const minWidth = 320; // Minimum screen width for maximum hand size
     const maxWidth = 1280; // Maximum screen width for minimum hand size
 
