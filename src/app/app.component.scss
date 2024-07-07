@@ -1,0 +1,20 @@
+::ng-deep {
+  .mat-fab,
+  .mat-flat-button {
+    transition: filter 0.3s ease;
+  }
+
+  .mat-fab:hover,
+  .mat-flat-button:hover {
+    filter: brightness(1.1);
+  }
+
+  .mat-flat-button {
+    filter: brightness(0.9);
+  }
+
+  svg:hover {
+    filter: brightness(1.2);
+    transition: filter 0.3s ease;
+  }
+}
