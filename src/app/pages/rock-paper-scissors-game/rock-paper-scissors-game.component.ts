@@ -87,10 +87,11 @@ export class RockPaperScissorsGameComponent {
       this.computerMove = gameResult.computerMove;
     }, 1000);
     setTimeout(() => {
-      this.disablePlayButton = false;
       if (this.#doGameHasEnded()) {
         this.#openGameEndResultDialog();
+        return;
       }
+      this.disablePlayButton = false;
     }, 2000);
   }
 

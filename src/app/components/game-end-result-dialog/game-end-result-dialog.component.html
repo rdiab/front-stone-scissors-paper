@@ -5,8 +5,7 @@
     <div>Computer remaining lives: {{ gameService.livesComputer }}</div>
   </div>
 </mat-dialog-content>
-<!-- TODO: Set button to the left -->
-<mat-dialog-actions>
+<mat-dialog-actions class="justify-content-end">
   <button mat-fab mat-dialog-close type="button" color="primary" (click)="gameService.resetGame()" routerLink="/main">
     <mat-icon>check</mat-icon>
   </button>
