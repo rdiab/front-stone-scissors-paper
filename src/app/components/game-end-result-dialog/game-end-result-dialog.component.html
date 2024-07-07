@@ -1,0 +1,12 @@
+<h5 mat-dialog-title class="mat-display-1 mb-4">{{ title }}</h5>
+<mat-dialog-content>
+  <div class="d-block">
+    <div>Player remaining lives: {{ gameService.livesPlayer }}</div>
+    <div>Computer remaining lives: {{ gameService.livesComputer }}</div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions class="justify-content-end">
+  <button mat-fab mat-dialog-close type="button" color="primary" (click)="gameService.resetGame()" routerLink="/main">
+    <mat-icon>check</mat-icon>
+  </button>
+</mat-dialog-actions>
